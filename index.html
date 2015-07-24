@@ -1,61 +1,19 @@
 <!doctype html>
-<html lang="en" ng-app="policyCards">
+<html lang="en" ng-app="hpCompare">
 
 <head>
     <meta charset="utf-8">
-    <title>Policy Cards</title>
+    <title>HP Compare</title>
     <script src="via_design/javascripts/vlocity.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="http://use.typekit.net/mys5mvc.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
     <link rel="stylesheet" href="via_design/css/vlocity.css">
-    <link rel="stylesheet" href="css/PolicyCards.css" />
+    <link rel="stylesheet" href="css/HPCompare.css" />
 </head>
 
-<body class="vlocity" ng-controller="policyCardsController">
-    <div class="cards-container">
-        <section class="console-card active" ng-repeat="card in cards.active">
-            <div class="card-top">
-                <div>
-                    <h2 tooltip-placement="bottom" tooltip="{{card.policyType}}">{{card.policyType}}</h2>
-                </div>
-                <span class="account-number">#{{card.acctNumber}}</span>
-                <span class="expires"><i ng-if="expiresSoon(card.expires, 30)" tooltip="Policy Expires Soon" class="icon icon-v-warning-cirlce"></i>Expires {{card.expires}}</span>
-            </div>
-            <div class="card-info">
-                <ul class="details">
-                    <li class="detail" ng-repeat="detail in card.details">
-                        <span class="detail-label">{{detail.label}}</span>
-                        <span class="value">{{detail.value}}</span>
-                    </li>
-                </ul>
-                <ul class="actions">
-                    <li ng-repeat="action in card.actions">
-                        <a href="{{action.url}}" target="{{action.openUrlIn}}">
-                            <i ng-if="!action.imageRef" class="icon {{action.vlocityIcon}}"></i>
-                            <span ng-if="action.imageRef">
-                                <img ng-src="{{action.imageRef}}" alt="{{action.displayName}}"/>
-                            </span>
-                            <span>{{action.displayName}}</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="console-card open" ng-repeat="card in cards.open">
-            <a href="{{card.actions[0].url}}" target="card.actions[0].openUrlIn" class="add-policy">
-                <i ng-if="!card.actions[0].imageRef" class="icon {{card.actions[0].vlocityIcon}}"></i>
-                <img ng-if="card.actions[0].imageRef" ng-src="{{card.actions[0].imageRef}}" alt="{{card.actions[0].displayName}}"/>
-                <span>{{card.actions[0].displayName}}</span>
-            </a>
-            <p class="description">{{card.description}}</p>
-            <ul class="secondary-actions">
-                <li ng-repeat="action in card.actions.slice(1,actions.length)">
-                    <a href="{{action.url}}" target="{{action.openUrlIn}}">{{action.displayName}}</a>
-                </li>
-            </ul>
-        </section>
+<body class="vlocity" ng-controller="hpCompareController">
+    <div class="container">
+        
     </div>
 </body>
 

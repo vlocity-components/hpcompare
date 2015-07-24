@@ -2,249 +2,109 @@
 
 /* Controllers */
 
-var policyCards = angular.module("policyCards", ['ui.bootstrap']);
+var policyCards = angular.module("hpCompare", ['ui.bootstrap']);
 
-policyCards.controller("policyCardsController", function($scope) {
+policyCards.controller("hpCompareController", function($scope) {
     $scope.cards = {
-        "active": [{
-            "policyType": "Homeowners",
-            "acctNumber": "51275438567",
-            "expires": "10/15/15",
-            "details": [{
-                "label": "Policy Holder",
-                "value": "Preston Reed"
+        "TFDRresp": {
+            "output": [{
+                "attributes": [{
+                    "categoryName": "Deductible",
+                    "value": "4000",
+                    "name": "Annual Deductible"
+                }, {
+                    "categoryName": "Deductible",
+                    "value": "medical deductible",
+                    "name": "Prescription Drug Deductible"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "30",
+                    "name": "Primary Care Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "40",
+                    "name": "Speciality Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "45",
+                    "name": "Non-Physican Office Visit"
+                }, ],
+                "NumDays": 1,
+                "ProductName": "HMO 200",
+                "ProductRecommend": true,
+                "ProductCode": "TI-AI",
+                "NumChildren": 2,
+                "NumAdults": 2,
+                "TotalPrice": 26.8,
+                "ChildPrice": 3.4,
+                "AdultPrice": 7.5,
+                "ID": "0"
             }, {
-                "label": "Type",
-                "value": "Homeowners"
+                "attributes": [{
+                    "categoryName": "Deductible",
+                    "value": "4000",
+                    "name": "Annual Deductible"
+                }, {
+                    "categoryName": "Deductible",
+                    "value": "medical deductible",
+                    "name": "Prescription Drug Deductible"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "30",
+                    "name": "Primary Care Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "40",
+                    "name": "Speciality Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "45",
+                    "name": "Non-Physican Office Visit"
+                }, ],
+                "NumDays": 1,
+                "ProductName": "HMO 250",
+                "ProductRecommend": false,
+                "ProductCode": "TI-EM",
+                "NumChildren": 2,
+                "NumAdults": 2,
+                "TotalPrice": 12.9,
+                "ChildPrice": 1.2,
+                "AdultPrice": 2.75,
+                "ID": "1"
             }, {
-                "label": "Jurisdiction",
-                "value": "CA"
-            }, {
-                "label": "Premium for Term",
-                "value": "1840"
-            }, {
-                "label": "Term",
-                "value": "Annual"
-            }],            
-            "actions": [{
-                "vlocityIcon": "icon-v-campaign",
-                "url": "http://www.google.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnmEAAT",
-                "displayName": "Review Policy"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.yahoo.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Coverage"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.facebook.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Vehicle"
-            }, {
-                "vlocityIcon": "icon-v-warning-circle-line",
-                "url": "http://www.twitter.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Request Evidence of Insurance"
-            }, {
-                "vlocityIcon": "icon-v-edit2",
-                "url": "http://www.linkedin.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "File a Claim"
-            }]
-        }, {
-            "policyType": "Auto",
-            "acctNumber": "512837675",
-            "expires": "6/30/15",            
-            "details": [{
-                "label": "Policy Holder",
-                "value": "Preston Reed"
-            }, {
-                "label": "Type",
-                "value": "Private Passenger"
-            }, {
-                "label": "Jurisdiction",
-                "value": "CA"
-            }, {
-                "label": "Premium for Term",
-                "value": "1840"
-            }, {
-                "label": "Term",
-                "value": "6-Month"
-            }],
-            "actions": [{
-                "vlocityIcon": "icon-v-campaign",
-                "url": "http://www.google.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnmEAAT",
-                "displayName": "Review Policy"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.yahoo.com",
-                "openUrlIn": "_self",
-                "imageRef": "http://placekitten.com/g/600/600",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Coverage"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.facebook.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Vehicle"
-            }, {
-                "vlocityIcon": "icon-v-warning-circle-line",
-                "url": "http://www.twitter.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Request Evidence of Insurance"
-            }, {
-                "vlocityIcon": "icon-v-edit2",
-                "url": "http://www.linkedin.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "File a Claim"
-            }]
-        }, {
-            "policyType": "Personal Umbrella Liability",
-            "acctNumber": "51275438567",
-            "expires": "10/15/15",
-            "details": [{
-                "label": "Policy Holder",
-                "value": "Preston Reed"
-            }, {
-                "label": "Type",
-                "value": "Homeowners"
-            }, {
-                "label": "Jurisdiction",
-                "value": "CA"
-            }, {
-                "label": "Premium for Term",
-                "value": "1840"
-            }, {
-                "label": "Term",
-                "value": "Annual"
-            }],
-            "actions": [{
-                "vlocityIcon": "icon-v-campaign",
-                "url": "http://www.google.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnmEAAT",
-                "displayName": "Review Policy"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.yahoo.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Coverage"
-            }, {
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.facebook.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Add Vehicle"
-            }, {
-                "vlocityIcon": "icon-v-warning-circle-line",
-                "url": "http://www.twitter.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Request Evidence of Insurance"
-            }, {
-                "vlocityIcon": "icon-v-edit2",
-                "url": "http://www.linkedin.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "File a Claim"
-            }]
-        }],
-        "open": [{
-            "policyType": "Variable Annuity",
-            "description": "Plan your retirement with a free consultation with our expert advisors.",
-            "actions": [{
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.google.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnmEAAT",
-                "displayName": "Add Variable Annuity"
-            }, {
-                "vlocityIcon": "",
-                "url": "http://www.yahoo.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "View Details"
-            }, {
-                "vlocityIcon": "",
-                "url": "http://www.facebook.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "View Other Annuities"
-            }]
-        }, {
-            "policyType": "Permanent Life",
-            "description": "10% off first year rates for policies over $1,000,000.",
-            "actions": [{
-                "vlocityIcon": "icon-v-plus",
-                "url": "http://www.google.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnmEAAT",
-                "displayName": "Add Permanent Life"
-            }, {
-                "vlocityIcon": "",
-                "url": "http://www.yahoo.com",
-                "openUrlIn": "_self",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "65 Life"
-            }, {
-                "vlocityIcon": "",
-                "url": "http://www.facebook.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "90 Life"
-            }, {
-                "vlocityIcon": "",
-                "url": "http://www.twitter.com",
-                "openUrlIn": "_blank",
-                "imageRef": "",
-                "id": "a0f1500000ARnqWAAT",
-                "displayName": "Limited Pay Life"
-            }]
-        }]
+                "attributes": [{
+                    "categoryName": "Deductible",
+                    "value": "4000",
+                    "name": "Annual Deductible"
+                }, {
+                    "categoryName": "Deductible",
+                    "value": "medical deductible",
+                    "name": "Prescription Drug Deductible"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "30",
+                    "name": "Primary Care Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "40",
+                    "name": "Speciality Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "45",
+                    "name": "Non-Physican Office Visit"
+                }, ],
+                "NumDays": 1,
+                "ProductName": "HMO 500",
+                "ProductRecommend": false,
+                "ProductCode": "TI-NE",
+                "NumChildren": 2,
+                "NumAdults": 2,
+                "TotalPrice": 10.1,
+                "ChildPrice": 0.8,
+                "AdultPrice": 1.75,
+                "ID": "2"
+            }, ]
+        },
+        "error": "OK"
     }
-
-    // Check to see if policy expires within the next X days (set in range variable)
-    $scope.expiresSoon = function(expires, range) {
-        var today = new Date(),
-            outerRange = Date.parse(new Date(today.getFullYear(), today.getMonth(), today.getDate() + range));
-
-        //If outerRange is smaller (earlier) than the value of the input date, don't show warning
-        if (outerRange < Date.parse(expires)){
-            return false;
-        }else{
-            return true;
-        }
-    };
 });
