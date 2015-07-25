@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 tasks: ['sass:all', 'postcss']
             },
             livereload: {
-                files: ['css/**/*.css'],
+                files: ['css/**/*.css', '*.html', 'js/**/*.js'],
                 options: {
                     livereload: true
                 }

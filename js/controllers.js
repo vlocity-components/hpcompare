@@ -2,10 +2,10 @@
 
 /* Controllers */
 
-var policyCards = angular.module("hpCompare", ['ui.bootstrap']);
+var policyCards = angular.module("hpCompare", ['ui.bootstrap','angular.filter']);
 
 policyCards.controller("hpCompareController", function($scope) {
-    $scope.cards = {
+    $scope.products = {
         "TFDRresp": {
             "output": [{
                 "attributes": [{
@@ -28,6 +28,10 @@ policyCards.controller("hpCompareController", function($scope) {
                     "categoryName": "Preventive Care",
                     "value": "45",
                     "name": "Non-Physican Office Visit"
+                }, {
+                    "categoryName": "Preventive Care",
+                    "value": "45",
+                    "name": "Another Name"
                 }, ],
                 "NumDays": 1,
                 "ProductName": "HMO 200",
@@ -42,12 +46,16 @@ policyCards.controller("hpCompareController", function($scope) {
             }, {
                 "attributes": [{
                     "categoryName": "Deductible",
-                    "value": "4000",
+                    "value": "5000",
                     "name": "Annual Deductible"
                 }, {
                     "categoryName": "Deductible",
                     "value": "medical deductible",
                     "name": "Prescription Drug Deductible"
+                }, {
+                    "categoryName": "Deductible",
+                    "value": "medical deductible",
+                    "name": "Another Type of Deductible"
                 }, {
                     "categoryName": "Preventive Care",
                     "value": "30",
@@ -74,7 +82,7 @@ policyCards.controller("hpCompareController", function($scope) {
             }, {
                 "attributes": [{
                     "categoryName": "Deductible",
-                    "value": "4000",
+                    "value": "6000",
                     "name": "Annual Deductible"
                 }, {
                     "categoryName": "Deductible",
